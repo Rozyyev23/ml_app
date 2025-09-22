@@ -28,11 +28,13 @@ uvicorn app.main:app --reload
 По умолчанию веб-интерфейс выводит только первые 10 предсказаний.
 Чтобы вывести все предсказания, открой app/main.py и в функции predict_file замени:
 
+```python
 "predictions": preds.tolist()[:10]
-
+```
 на:
+```python
 "predictions": preds.tolist()
-
+```
 ## Проверка
 ```bash
 python test.py --student predictions.csv --correct correct_answers.csv
